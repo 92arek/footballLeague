@@ -3,11 +3,16 @@ package footballTeam;
 import java.util.Objects;
 
 public class Player {
-
     private final String name;
     private final String surname;
 
     public Player(String name, String surname) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException(String.format("Name cannot be empty, but %s given.", name));
+        }
+        if (surname == null || surname.isEmpty()) {
+            throw new IllegalArgumentException(String.format("Surname cannot be empty, but %s given.", surname));
+        }
         this.name = name;
         this.surname = surname;
     }
@@ -22,10 +27,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+        return "Player{name='" + name + "', surname='" + surname + "'}";
     }
 
     @Override
