@@ -1,4 +1,4 @@
-package footballTeam;
+package model;
 
 import org.junit.Test;
 
@@ -28,31 +28,24 @@ public class TeamTest {
     @Test
     public void addingPlayerAssignsHimToTeam() {
         Team team = new Team("Name");
-
         team.addPlayer(new Player("Name", "Surname"));
-
         assertThat(team.getPlayers()).containsExactly(new Player("Name", "Surname"));
     }
 
     @Test
     public void addingDifferentPLayersAssignsBothOfThem() {
         Team team = new Team("Name");
-
         team.addPlayer(new Player("Name1", "Surname2"));
         team.addPlayer(new Player("Name2", "Surname2"));
-
-        assertThat(team.getPlayers()).containsExactly(new Player("Name1", "Surname2"), new Player("Name2", "Surname2"));
+        assertThat(team.getPlayers()).containsExactly(new Player("Name1", "Surname2"),
+                new Player("Name2", "Surname2"));
     }
 
     @Test
     public void addingSamePLayerTwiceAssignsOnlyOne() {
         Team team = new Team("Name");
-
         team.addPlayer(new Player("Name", "Surname"));
         team.addPlayer(new Player("Name", "Surname"));
-
         assertThat(team.getPlayers()).containsExactly(new Player("Name", "Surname"));
     }
-
-
 }

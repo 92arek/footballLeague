@@ -1,4 +1,4 @@
-package footballTeam;
+package model;
 
 import org.junit.Test;
 

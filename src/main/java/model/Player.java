@@ -1,4 +1,4 @@
-package footballTeam;
+package model;
 
 import java.util.Objects;
 
@@ -8,10 +8,10 @@ public class Player {
 
     public Player(String name, String surname) {
         if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException(String.format("Name cannot be empty, but %s given.", name));
+            throw new IllegalArgumentException(String.format("Name cannot be empty, but is given.", name));
         }
         if (surname == null || surname.isEmpty()) {
-            throw new IllegalArgumentException(String.format("Surname cannot be empty, but %s given.", surname));
+            throw new IllegalArgumentException(String.format("Surname cannot be empty, but is given.", surname));
         }
         this.name = name;
         this.surname = surname;
